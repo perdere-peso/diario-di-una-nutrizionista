@@ -17,7 +17,7 @@ Qui si parla di:
 ---
 
 🔗 **Sito web:**  
-👉 [Visita il blog](https://perdere-peso.github.io/diario-di-una-nutrizionista/)
+👉 [Più leggera di ieri](https://perdere-peso.github.io/diario-di-una-nutrizionista/)
 
 **Contatto:**  
 📧 [m0retti.rita.amore@gmail.com](mailto:m0retti.rita.amore@gmail.com)
