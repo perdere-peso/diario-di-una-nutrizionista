@@ -1,9 +1,17 @@
 /* style.css */
+
 /*--------------------------------------------------------------
-1. Reset e base
+1. Reset & base
 --------------------------------------------------------------*/
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { height: 100%; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
 body {
   font-family: system-ui, sans-serif;
   line-height: 1.6;
@@ -19,7 +27,7 @@ body {
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 auto;
+  padding: 0 1rem;
   width: 100%;
 }
 
@@ -34,8 +42,8 @@ body {
   text-align: center;
   flex: none;
 }
-/* decorative bubbles */
-.hero::before, .hero::after {
+.hero::before,
+.hero::after {
   content: "";
   position: absolute;
   border-radius: 50%;
@@ -51,10 +59,7 @@ body {
   bottom: -80px; right: -50px;
   background: #4FC3F7;
 }
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
+.hero-content { position: relative; z-index: 1; }
 .logo {
   display: inline-flex;
   align-items: center;
@@ -91,7 +96,7 @@ main {
 }
 
 /*--------------------------------------------------------------
-5. Lista articoli
+5. Articles list
 --------------------------------------------------------------*/
 .articles-list {
   list-style: none;
@@ -115,12 +120,19 @@ main {
 /*--------------------------------------------------------------
 6. Footer
 --------------------------------------------------------------*/
+/* сам футер с фоновой заливкой */
 .site-footer {
   background: #B3E5FC;
-  color: #212121;
-  text-align: center;
-  padding: 1.5rem 0;
   flex: none;
+}
+/* контент футера — внутри .container */
+.site-footer .container {
+  padding: 1.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  /* text-align: center; уже у .site-footer можно не дублировать */
 }
 .site-footer a {
   color: inherit;
@@ -128,21 +140,99 @@ main {
   margin: 0 0.5rem;
   transition: all 0.3s ease;
 }
-.site-footer a:hover {
-  text-decoration: underline;
-}
+.site-footer a:hover { text-decoration: underline; }
 .disclaimer {
-  margin-top: 1rem;
+  width: 100%;
   font-size: 0.85rem;
   color: #616161;
+  text-align: center;
+  margin-top: 0.5rem;
 }
 
 /*--------------------------------------------------------------
-7. Responsive
+7. Article lists styling (ul/ol)
+--------------------------------------------------------------*/
+article {
+  padding: 0 1rem;
+}
+article ul,
+article ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  line-height: 1.5;
+  list-style-position: outside;
+  list-style-type: disc;
+}
+article ul li::marker {
+  color: #FF8F00;
+  font-size: 1.1em;
+}
+article ul li,
+article ol li {
+  margin-bottom: 0.6rem;
+}
+article ul li p,
+article ol li p {
+  margin: 0.4rem 0 0 0;
+  padding-left: 0;
+}
+
+/*--------------------------------------------------------------
+8. Responsive (mobile до 480px)
 --------------------------------------------------------------*/
 @media (max-width: 480px) {
-  .hero { padding: 2rem 0 1rem; }
-  .logo { font-size: 1.5rem; }
-  .page-title { font-size: 1.6rem; }
-  .intro { font-size: 1rem; }
+  /* перезапишем внутренние паддинги футера */
+  .site-footer {
+    padding: 0;           /* все отступы — внутри .container */
+  }
+  .site-footer .container {
+    padding: 1.5rem 1rem;
+  }
+
+  /* чуть меньше отступов по бокам */
+  .container,
+  main,
+  article {
+    padding: 0 1rem;
+  }
+  .hero {
+    padding: 2rem 1rem 1rem;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .logo-emoji {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+  }
+  .page-title {
+    font-size: 1.8rem;
+    padding: 0.8rem;
+  }
+  .intro {
+    font-size: 1rem;
+  }
+  .articles-list li {
+    padding: 0.8rem 0.5rem;
+  }
+
+  /* выделяем главный заголовок h1 (page-title) */
+  .page-title {
+    color: #e0ac69;
+    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  /* списки в статье чуть компактнее */
+  article ul,
+  article ol {
+    padding-left: 1rem;
+    margin: 0.8rem 0;
+  }
+  article ul li,
+  article ol li {
+    margin-bottom: 0.5rem;
+  }
 }
