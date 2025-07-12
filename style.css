@@ -63,13 +63,13 @@ body {
 .logo {
   display: inline-flex;
   align-items: center;
-  font-size: 2rem;
+  font-size: 3.2rem;
   gap: 0.5rem;
 }
 .logo-emoji { font-size: 2.5rem; }
 .logo-text {
   font-weight: bold;
-  color: #212121;
+  color: #4d4949;
 }
 .subtitle {
   margin-top: 0.5rem;
@@ -124,6 +124,7 @@ main {
 .site-footer {
   background: #B3E5FC;
   flex: none;
+  margin-top: 50px;
 }
 /* контент футера — внутри .container */
 .site-footer .container {
@@ -184,6 +185,7 @@ article ol li p {
   /* перезапишем внутренние паддинги футера */
   .site-footer {
     padding: 0;           /* все отступы — внутри .container */
+	margin-top: 40px;
   }
   .site-footer .container {
     padding: 1.5rem 1rem;
@@ -199,7 +201,7 @@ article ol li p {
     padding: 2rem 1rem 1rem;
   }
   .logo {
-    font-size: 1.5rem;
+    font-size: 2.3rem;
   }
   .logo-emoji {
     font-size: 2rem;
@@ -235,4 +237,56 @@ article ol li p {
   article ol li {
     margin-bottom: 0.5rem;
   }
+  main .page-title, main h1.page-title {
+	font-size: 1.75rem !important; 
+  }
+}
+
+main .page-title, main h1.page-title {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.95rem;
+  font-weight: 700;
+  color: #e6ac00;   /* янтарный/горчичный, как на DE странице */
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+/* Подзаголовки разделов */
+main h2 {
+  margin-top: 2.2rem;
+  margin-bottom: 1.1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #248c5c;     /* глубокий зелёный, контрастно к янтарному */
+  border-left: 4px solid #FFEB3B;
+  padding-left: 0.65em;
+  background: linear-gradient(90deg, #fffae7 80%, transparent 100%);
+}
+
+/* Текстовые блоки */
+main p, main ul, main ol {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.07rem;
+  line-height: 1.7;
+}
+
+/* Первый подзаголовок чуть ближе к верху */
+main h2:first-of-type {
+  margin-top: 1.4rem;
+}
+
+.image-block {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.image-block img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px; /* закруглённые углы */
+  border: 3px solid #e6ac00; /* малиновый или лиловый — можешь поменять */
+  box-shadow: 0 2px 16px #e9d7ec33;
 }
