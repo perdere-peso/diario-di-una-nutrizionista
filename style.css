@@ -290,3 +290,22 @@ main h2:first-of-type {
   border: 3px solid #e6ac00; /* малиновый или лиловый — можешь поменять */
   box-shadow: 0 2px 16px #e9d7ec33;
 }
+
+
+h3 {
+  color: #946330;         /* тёплый коричневый */
+  font-size: 1.45rem;      /* как у h2 */
+  font-weight: 700;
+  margin: 2.3rem 0 1.1rem 0;
+  background: none;
+  border: none;
+  padding: 0;
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+@media (max-width: 600px) {
+  h3 {
+    font-size: 1.15rem;
+    margin: 1.4rem 0 0.7rem 0;
+  }
+}
